@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -67,7 +68,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 else -> 300
             }
         }
-        textViewPremium.text = getString(R.string.premium) + getString(R.string.dollarSign)+premium
+
+        val symbol = Currency.getInstance(Locale.getDefault())
+        textViewPremium.text = String.format("%s %s %d ",getString(R.string.premium),symbol,premium)
     }
     fun resetInput(view: View?){
         spinnerAge.setSelection(0)
