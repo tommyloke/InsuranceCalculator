@@ -16,4 +16,5 @@
         <item>41 to 55</item>
         <item>More than 55</item>
     </string-array>
+    <string name="dollarSign">RM </string>
 </resources>
